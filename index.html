@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCA WEB</title>
+    <link rel="shortcut icon" href="./assets/images/rca-web-fav.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/flickity.css">
+    <link rel="stylesheet" href="./css/style.css"  >
+    <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+
+
+<!-- preloader -->
+
+<style>
+    /* Preloader Container */
+    .preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.5s;
+    }
+    .preloader-finish {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .preloader-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .preloader-logo {
+      width: 200px;
+      height: 200px;
+      user-select: none;
+      /* margin-bottom: 20px; */
+    }
+    /* Logo Animation: Scale up and fade out */
+    @keyframes scaleAndFade {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(10); /* Scales to 150% */
+        opacity: .7;
+      }
+      70% {
+        transform: scale(15); /* Scales to 150% */
+        opacity: .5;
+      }
+      100% {
+        transform: scale(20); /* Scales to 150% */
+        opacity: 0;
+      }
+    }
+    /* Apply the animation when this class is added */
+    .animate-logo {
+      animation: scaleAndFade 0.8s forwards linear;
+    }
+
+</style>
+<div class="preloader">
+    <div class="preloader-content">
+        <div class="preloader-logo">
+            <img src="./assets/images/rca_logo.png" alt="">
+        </div>
+    </div>
+</div>
+<script>
+    window.addEventListener('load', function() {
+      
+      document.querySelector('.preloader-logo img').classList.add('animate-logo');
+      
+      
+      setTimeout(function() {
+        document.querySelector('.preloader').classList.add('preloader-finish');
+      }, 1200); 
+    });
+  </script>
+
+
+
+
+<!-- Header Section -->
+
+<section class="top-strip-section">
+    <div class="top-strip-content">
+        <div class="reserve-seat-strip">
+            <a href="javascript:void(0);" class="reserve-seat-strip-bg" style="background-image: url(./assets/images/funnal-top-bg.png);">Book A Call</a>
+            <p>100% Money Back Guarantee. </p>
+        </div>
+    </div>
+</section>
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="header-menu">
+                <div class="header-rca-logo">
+                    <a href="#">
+                        <img src="./assets/images/rca-logo.svg" alt="">
+                    </a>
+                </div>
+
+                <ul class="main-menu">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Testimonial</a></li>
+                    <li><a href="">Leaderboard</a></li>
+                    <li><a href="">Diamond+</a></li>
+                    <li><a href="">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="header-btn">
+                <div class="header-login">
+                    <a href="#" class="border-btn">Log In</a>
+                </div>
+                <div class="header-book-call siteGradient_buttonHasGradient">
+                    <div class="siteGradient__backGround_container">
+                        <span class="siteGradient__backGround"></span>
+                    </div>
+                    <a href="#" class="solid-btn-black">Book Demo Call</a>
+
+                </div>
+            </div>
+
+        </nav>
+    </div>
+</header>
+
+
+<!-- Hero Section -->
+ <section class="hero-section bg-white">
+    <div class="container">
+        <div class="hero-banner">
+            <div class="hero-banner-content">
+                <div class="hero-banner-content-heading">
+                    <h5 class="graident-title">Start A Side Business In 7 Days</h5>
+                    <h1>Hit Your First $10,000/ mo In Under 120 Days  <span class="graident-heading">Guaranteed.</span></h1>
+                </div>
+                <div class="hero-banner-content-btn">
+                    <a href="" class="common-arrow-btn">
+                        <span class="solid-btn-black">GET STARTED FOR FREE </span>
+                        <span class="btn-arrow-white">
+                            <div class="arrow_inner">
+                                <img src="./assets/images/btn-arrow-white.svg" alt="" >
+                                <img src="./assets/images/btn-arrow-white.svg" alt="" >
+                            </div>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="hero-banner-logo-slider">
+                    <h5>Our Trusted Clients</h5>
+                    <div class="siteVelocity__slider--Container">
+                        <div class="siteVelocity__slider" data-direction="1">
+                                <img class="siteVelocity__sliderImage" src="./assets/images/logo-01.svg" alt="Our Satisfied Business Partners" />
+                                <img class="siteVelocity__sliderImage" src="./assets/images/logo-02.svg" alt="Our Satisfied Business Partners" />
+                                <img class="siteVelocity__sliderImage" src="./assets/images/logo-03.svg" alt="Our Satisfied Business Partners" />
+                                <img class="siteVelocity__sliderImage" src="./assets/images/logo-04.svg" alt="Our Satisfied Business Partners" />
+                                <img class="siteVelocity__sliderImage" src="./assets/images/logo-05.svg" alt="Our Satisfied Business Partners" />
+                                <img class="siteVelocity__sliderImage" src="./assets/images/logo-06.svg" alt="Our Satisfied Business Partners" />
+                                <img class="siteVelocity__sliderImage" src="./assets/images/logo-07.svg" alt="Our Satisfied Business Partners" />
+                                <img class="siteVelocity__sliderImage" src="./assets/images/logo-08.svg" alt="Our Satisfied Business Partners" />
+                                <img class="siteVelocity__sliderImage" src="./assets/images/logo-09.svg" alt="Our Satisfied Business Partners" />
+                                <img class="siteVelocity__sliderImage" src="./assets/images/logo-10.svg" alt="Our Satisfied Business Partners" />
+                                <img class="siteVelocity__sliderImage" src="./assets/images/logo-11.svg" alt="Our Satisfied Business Partners" />
+                                <img class="siteVelocity__sliderImage" src="./assets/images/logo-12.svg" alt="Our Satisfied Business Partners" />
+                                <img class="siteVelocity__sliderImage" src="./assets/images/logo-13.svg" alt="Our Satisfied Business Partners" />
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="hero-banner-video">
+                <img src="./assets/images/hero-banner-img.jpg" alt="">
+
+                <div class="watch-intro-btn">
+                    <a href="">
+                        Watch Intro
+                        <span class="watch-intro-play">
+                            <img src="./assets/images/play-pause-btn.svg" alt="">
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+ </section>
+
+
+ <!-- Automated Side Secetion -->
+  <section class="automated-side-section">
+    <div class="container">
+        <div class="automated-section-heading">
+            <h2>Get an Automated
+                Side Business</h2>
+        </div>
+        <div class="automated-side-boxes moving_boxContainer">
+            <div class="automated-side-box left">
+                <div class="automated-side-box-heading">
+                    <h3>Instant <br>Feedback</h3>
+                    <p>Real-time answers to your business questions, specifically related to the RCA program.</p>
+                </div>
+                <div class="automated-side-dote">
+                    <img src="./assets/images/feedback.svg" alt="">
+                </div>
+            </div>
+
+            <div class="automated-side-box center">
+                <div class="automated-side-box-heading">
+                    <h3>Proven <br> Success</h3>
+                    <p>Insights from a curriculum that has helped students and coaches build six, seven, and eight-figure businesses.</p>
+                </div>
+                <div class="automated-side-dote">
+                    <img src="./assets/images/proven.svg" alt="">
+                </div>
+            </div>
+
+            <div class="automated-side-box right">
+                <div class="automated-side-box-heading">
+                    <h3>Business <br> Plan Support</h3>
+                    <p>Assistance with writing business plans and business cases tailored to your needs.</p>
+                </div>
+                <div class="automated-side-dote">
+                    <img src="./assets/images/bussiness.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="aumatated-btn">
+            <a href="" class="common-arrow-btn">
+                <span class="solid-btn-black">LEARN MORE ABOUT THE TEAM </span>
+                <span class="btn-arrow-white">
+                    <div class="arrow_inner">
+                        <img src="./assets/images/btn-arrow-black.svg" alt="" >
+                        <img src="./assets/images/btn-arrow-black.svg" alt="" >
+                    </div>
+                </span>
+            </a>
+        </div>
+    </div>
+  </section>
+
+
+  <section class="active-income-section bg-white radius-top">
+    <div class="container">
+        <div class="active-income-heading">
+            <h2>Turn Active Income InTo Passive Income</h2>
+        </div>
+        <div class="active-income-gif">
+            <img src="./assets/images/active-income.png" alt="">
+        </div>
+        <div class="active-income-sub-title">
+            <h3>Or Pay Nothing!</h3>
+        </div>
+    </div>
+  </section>
+
+
+
+   <!-- Pinned section -->
+    <section class="pin-slider-section bg-white">
+        <div class="container">
+            <div class="pin-slider-heading">
+                <h2>Your Entire Business Built By Our Team In 7 Days</h2>
+                <h5 class="graident-title">A Team That HaS Scaled Over $200 Million In Business</h5>
+            </div>
+        </div>
+    </section>
+   <div class="pinned-section">
+    <div class="cards-container">
+      <div class="card_overlay">
+        <img src="./assets/images/crm.png" alt="">
+      </div>
+      <div class="card_overlay">
+        <img src="./assets/images/classroom.jpg" alt="">
+      </div>
+      <div class="card_overlay">
+        <img src="./assets/images/website.jpg" alt="">
+      </div>
+      <div class="card_overlay">
+        <img src="./assets/images/coaching.jpg" alt="">
+      </div>
+      <div class="card_overlay">
+        <img src="./assets/images/marketing.jpg" alt="">
+      </div>
+      <div class="card_overlay">
+        <img src="./assets/images/community.jpg" alt="">
+      </div>
+      <div class="card_overlay">
+        <img src="./assets/images/mentor-ai.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+
+
+
+<!--  -->
+  <section class="automated-side-section dark bg-white">
+    <div class="container">
+        <div class="automated-section-heading">
+            <h2>Get an Automated
+                Side Business</h2>
+        </div>
+        <div class="automated-side-boxes moving_boxContainer">
+            <div class="automated-side-box left">
+                <div class="automated-side-box-heading">
+                    <h3>Hiring  <br>Advice</h3>
+                    <p>Best practices for hiring and managing employees to scale your business efficiently.</p>
+                </div>
+                <div class="automated-side-dote">
+                    <img src="./assets/images/hiring.svg" alt="">
+                </div>
+            </div>
+
+            <div class="automated-side-box center">
+                <div class="automated-side-box-heading">
+                    <h3>Sales Script  <br> Optimization</h3>
+                    <p>Techniques to craft and improve sales scripts for better conversion rates.</p>
+                </div>
+                <div class="automated-side-dote">
+                    <img src="./assets/images/salse.svg" alt="">
+                </div>
+            </div>
+
+            <div class="automated-side-box right">
+                <div class="automated-side-box-heading">
+                    <h3>Location  <br> Strategy</h3>
+                    <p>Guidance on choosing optimal locations for your next service area.</p>
+                </div>
+                <div class="automated-side-dote">
+                    <img src="./assets/images/location.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="aumatated-btn">
+            <a href="" class="common-arrow-btn">
+                <span class="solid-btn-black">LEARN MORE ABOUT THE TEAM </span>
+                <span class="btn-arrow-white">
+                    <div class="arrow_inner">
+                        <img src="./assets/images/btn-arrow-white.svg" alt="" >
+                        <img src="./assets/images/btn-arrow-white.svg" alt="" >
+                    </div>
+                </span>
+            </a>
+        </div>
+    </div>
+  </section>
+
+<!--  -->
+  <section class="access-all-video-section">
+    <div class="container">
+        <div class="access-all-video-heading">
+            <p>Designed By The Team That Helped Scale Over $50 Million IN Business</p>
+            <h2>Access All The Tools You Need.
+                AND NOTHING YOU DON’T</h2>
+        </div>
+
+  
+
+        <div class="video_scale_animation-main">
+            <div class="bg-video video_scale_animation">
+              <div class="has_video_scale">
+                <div id="progressContainer" class="progress-container">
+                <div id="progressBar" class="progress-bar"></div>
+              </div>
+                <video id="myVideo" loop playsinline preload="auto" wekit-playsinline> >
+                  <source src="./assets/video/RCA_Advanced_V4.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+        </div>
+    </div>
+
+  </section>
+
+
+  <!--  -->
+  <section class="just-five-client-section bg-white radius-top">
+    <div class="container">
+        <div class="just-five-client-heading">
+            <h5 class="graident-title">Over 12months At $200 Per Clean</h5>
+            <h2>Just 5 Clients/wk = $50,000/mo</h2>
+        </div>
+        <div class="just-five-client-video">
+            <!-- <video width="100%" loop="" muted="" autoplay="" playsinline="" controlslist="nodownload">
+                <source src="./assets/video/graph-video.mp4" type="video/mp4">
+            </video> -->
+            <img src="./assets/images/graph-video.png" alt="">
+        </div>
+
+        <div class="just-five-client-text">
+            <p>*5 Client a week  /  *$199/month per client / *Disclaimer: Results may vary. It’s possible to generate $47K/month in just 12 months.</p>
+            <a href="" class="solid-btn-graident">START YOUR JOURNEY NOW</a>
+        </div>
+    </div>
+  </section>
+
+
+  <!--  -->
+  <section class="client-earning-section">
+    <div class="container">
+        <div class="client-earning-div">
+            <div class="client-earning-content mask__containerArea">
+                <h2>Client Earnings Leaderboard</h2>
+                <p class="mask_elementText" >See the top earners in our community! Track your progress, celebrate milestones, and get inspired by the achievements of others. Will you be our next top earner?</p>
+                <div class="client-earning-btn">
+                    <a href="" class="solid-btn-graident">Create Free account</a>
+                    <h6>NEW YEARS OFFER </h6>
+                </div>
+            </div>
+
+            <div class="leader-board-slids">
+                <div class="board-slid">
+                    <img src="./assets/images/leaderboard-slide-1.png" alt="">
+                </div>
+                <div class="board-slid">
+                    <img src="./assets/images/leaderboard-slide-2.png" alt="">
+                </div>
+                <div class="board-slid">
+                    <img src="./assets/images/leaderboard-slide-3.png" alt="">
+                </div>
+                <div class="board-slid">
+                    <img src="./assets/images/leaderboard-slide-4.png" alt="">
+                </div>
+                <div class="board-slid">
+                    <img src="./assets/images/leaderboard-slide-5.png" alt="">
+                </div>
+
+                <p>100+ Top Earners</p>
+            </div>
+        </div>
+    </div>
+  </section>
+
+
+
+  <section class="meet-product-linup-section bg-white">
+
+    <div class="meet-product-linup-heading">
+        <h5 class="graident-title">Get Direct Access TO An Award Winning Team On Day 1</h5>
+        <h2>Meet the Product Lineup</h2>
+    </div>
+
+    <div class="carousel">
+
+
+        <div class="meet-product-linup-slide carousel-cell">
+            <div class="meet-product-linup-slide-img ">
+              
+                    <img src="./assets/images/meet-product-linup-slide-01.jpg" alt="">
+            </div>
+            <div class="meet-product-linup-slide-content">
+                <h4>SYNC</h4>
+                <p>Manage your entire business with one tool from anywhere. </p>
+            </div>
+          </div>
+
+          <div class="meet-product-linup-slide carousel-cell">
+            <div class="meet-product-linup-slide-img ">
+            
+                    <img src="./assets/images/meet-product-linup-slide-02.jpg" alt="">
+            </div>
+            <div class="meet-product-linup-slide-content">
+                <h4>WEBSITE & BRANDING </h4>
+                <p>The perfect branding ready on day 1</p>
+            </div>
+          </div>
+
+          <div class="meet-product-linup-slide carousel-cell">
+            <div class="meet-product-linup-slide-img ">
+                <img src="./assets/images/meet-product-linup-slide-03.jpg" alt="">
+            </div>
+            <div class="meet-product-linup-slide-content">
+                <h4>MARKETING DONE BY THE PROS</h4>
+                <p>Our team will run your marketing & ads.</p>
+            </div>
+          </div>
+
+          <div class="meet-product-linup-slide carousel-cell">
+            <div class="meet-product-linup-slide-img ">
+                <img src="./assets/images/meet-product-linup-slide-04.jpg" alt="">
+            </div>
+            <div class="meet-product-linup-slide-content">
+                <h4>COACHING</h4>
+                <p>Work directly with coaches that are running successful home service business powered by RCA</p>
+            </div>
+          </div>
+      </div>
+
+
+
+
+    <!-- <div class="slider-section">
+        <div class="slider">
+            <div class="meet-product-linup-slide">
+                <div class="meet-product-linup-slide-img">
+                    <img src="./assets/images/meet-product-linup-slide-01.jpg" alt="">
+                </div>
+                <div class="meet-product-linup-slide-content">
+                    <h4>SYNC</h4>
+                    <p>Manage your entire business with one tool from anywhere. </p>
+                </div>
+              </div>
+    
+              <div class="meet-product-linup-slide">
+                <div class="meet-product-linup-slide-img">
+                    <img src="./assets/images/meet-product-linup-slide-02.jpg" alt="">
+                </div>
+                <div class="meet-product-linup-slide-content">
+                    <h4>WEBSITE & BRANDING </h4>
+                    <p>The perfect branding ready on day 1</p>
+                </div>
+              </div>
+    
+              <div class="meet-product-linup-slide">
+                <div class="meet-product-linup-slide-img">
+                    <img src="./assets/images/meet-product-linup-slide-03.jpg" alt="">
+                </div>
+                <div class="meet-product-linup-slide-content">
+                    <h4>MARKETING DONE BY THE PROS</h4>
+                    <p>Our team will run your marketing & ads.</p>
+                </div>
+              </div>
+    
+              <div class="meet-product-linup-slide">
+                <div class="meet-product-linup-slide-img">
+                    <img src="./assets/images/meet-product-linup-slide-04.jpg" alt="">
+                </div>
+                <div class="meet-product-linup-slide-content">
+                    <h4>COACHING</h4>
+                    <p>Work directly with coaches that are running successful home service business powered by RCA</p>
+                </div>
+              </div>
+        </div>
+      </div> -->
+      
+      
+      <!-- <div class="circle">
+        <span class="cursor-arrow left-arrow">←</span>
+        <span class="cursor-arrow right-arrow">→</span>
+      </div> -->
+      
+  </section>
+
+
+
+  <!--  -->
+  <section class="why-work-with-us-section bg-white mask__containerArea">
+    <div class="container">
+        <div class="why-work-with-us-content">
+            <div class="why-work-with-us-heading">
+                <h5 class="graident-title">Founded By True Business Experts</h5>
+                <h2>Why Work With Us?</h2>
+            </div>
+            <div class="why-work-with-us-text ">
+                <p class="mask_elementText">Most small businesses fail due to a lack of the right tools, resources, and guidance. We’ve changed that by eliminating the guesswork and setting you up for success from day one. We build your systems and branding using strategies that have scaled multi-million-dollar brands—now custom-built and affordable for our clients. With cutting-edge software and expert branding, we position you for success in just days.</p>
+                <p class="mask_elementText">Our founding team has scaled brands like Angi’s List, Molly Maids, and many other multi-million-dollar service brands. We’ve also founded companies like Blue Tees Golf and Custom Esignature, and serve as board members for top digital marketing brands like Ignite Visibility.</p> 
+            </div>
+            <div class="why-work-us-img enlarge__inView">
+                <img class="scaling_image-img" src="./assets/images/why-work-us.jpg" alt="">
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!--  -->
+    <section class="testimonial-slider-section bg-white">
+        <div class="container">
+            <div class="testimonial-slider-haeading">
+                <h5 class="graident-title">Remote Cleaning Academy Success Stories</h5>
+                <h2>Success Stories</h2>
+            </div>
+        </div>
+        <div class="testimonial-slider">
+
+            <div class="carousel" data-flickity='{ "freeScroll": true, "wrapAround": true }'>
+            <div class="testimonial-slide carousel-cell">
+                <div class="testimonial-slide-img">
+                    <img src="./assets/images/tony-slide.jpg" alt="">
+                </div>
+                <div class="testimonial-slide-content">
+                    <h5>Tony Katz</h5>
+                    <p>Tony’s journey is truly inspiring. Through the remote cleaning industry and our program, he went from being homeless to owning his first home, driving his dream car, and raising a family with two beautiful daughters. By running a 100% remote business, Tony achieved financial stability and flexibility, becoming his own boss and taking full control of his finances without having to rely on anyone else.</p>
+                    <div class="slide-earning">
+                        <div class="earning">
+                            <h4>$40,544/mo</h4>
+                            <p>Earnings</p>
+                        </div>
+                        <div class="earning-time">
+                            <h4>12</h4>
+                            <p>Months</p>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="testimonial-slide carousel-cell">
+                <div class="testimonial-slide-img">
+                    <img src="./assets/images/tony-slide.jpg" alt="">
+                </div>
+                <div class="testimonial-slide-content">
+                    <h5>Tony Katz</h5>
+                    <p>Tony’s journey is truly inspiring. Through the remote cleaning industry and our program, he went from being homeless to owning his first home, driving his dream car, and raising a family with two beautiful daughters. By running a 100% remote business, Tony achieved financial stability and flexibility, becoming his own boss and taking full control of his finances without having to rely on anyone else.</p>
+                    <div class="slide-earning">
+                        <div class="earning">
+                            <h4>$40,544/mo</h4>
+                            <p>Earnings</p>
+                        </div>
+                        <div class="earning-time">
+                            <h4>12</h4>
+                            <p>Months</p>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="testimonial-slide carousel-cell">
+                <div class="testimonial-slide-img">
+                    <img src="./assets/images/tony-slide.jpg" alt="">
+                </div>
+                <div class="testimonial-slide-content">
+                    <h5>Tony Katz</h5>
+                    <p>Tony’s journey is truly inspiring. Through the remote cleaning industry and our program, he went from being homeless to owning his first home, driving his dream car, and raising a family with two beautiful daughters. By running a 100% remote business, Tony achieved financial stability and flexibility, becoming his own boss and taking full control of his finances without having to rely on anyone else.</p>
+                    <div class="slide-earning">
+                        <div class="earning">
+                            <h4>$40,544/mo</h4>
+                            <p>Earnings</p>
+                        </div>
+                        <div class="earning-time">
+                            <h4>12</h4>
+                            <p>Months</p>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+          </div>
+
+            <!-- <div class="testimonial-slide">
+                <div class="testimonial-slide-img">
+                    <img src="./assets/images/tony-slide.jpg" alt="">
+                </div>
+                <div class="testimonial-slide-content">
+                    <h5>Tony Katz</h5>
+                    <p>Tony’s journey is truly inspiring. Through the remote cleaning industry and our program, he went from being homeless to owning his first home, driving his dream car, and raising a family with two beautiful daughters. By running a 100% remote business, Tony achieved financial stability and flexibility, becoming his own boss and taking full control of his finances without having to rely on anyone else.</p>
+                    <div class="slide-earning">
+                        <div class="earning">
+                            <h4>$40,544/mo</h4>
+                            <p>Earnings</p>
+                        </div>
+                        <div class="earning-time">
+                            <h4>12</h4>
+                            <p>Months</p>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="testimonial-slide">
+                <div class="testimonial-slide-img">
+                    <img src="./assets/images/tony-slide.jpg" alt="">
+                </div>
+                <div class="testimonial-slide-content">
+                    <h5>Tony Katz</h5>
+                    <p>Tony’s journey is truly inspiring. Through the remote cleaning industry and our program, he went from being homeless to owning his first home, driving his dream car, and raising a family with two beautiful daughters. By running a 100% remote business, Tony achieved financial stability and flexibility, becoming his own boss and taking full control of his finances without having to rely on anyone else.</p>
+                    <div class="slide-earning">
+                        <div class="earning">
+                            <h4>$40,544/mo</h4>
+                            <p>Earnings</p>
+                        </div>
+                        <div class="earning-time">
+                            <h4>12</h4>
+                            <p>Months</p>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+  <!--  -->
+  <section class="cta-section bg-white">
+    <div class="container">
+        <div class="cta-content mask__containerArea">
+            <h5><span class="graident-title">Be The Boss</span> You Want To Be</h5>
+            <h2>Ready To Start Building Your Remote Cleaning Empire?</h2>
+            <p class="mask_elementText" >Our students can have a fully-built business in as short as 7 days. Start making $10K+/mo in 120 days.</p>
+            <a href="" class="solid-btn-graident">get access now</a>
+        </div>
+    </div>
+  </section>
+
+
+
+<!--  -->
+  <footer class="fade-top-parent">
+    <div class="container">
+        <div class="footer-component">
+            <div class="footer-component-links">
+                <div class="footer-logo">
+                    <a href="">
+                        <img src="./assets/images/footer-logo.svg" alt="">
+                    </a>
+                </div>
+                <div class="footer-component-nav hasHover__parent">
+                    <ul class="footer-nav">
+                        <li class="fade-top"><a class="hasHover" href="">About Us</a></li>
+                        <li class="fade-top"><a class="hasHover" href="">Testimonials</a></li>
+                        <li class="fade-top"><a class="hasHover" href="">E-Course</a></li>
+                        <li class="fade-top"><a class="hasHover" href="">SYNC</a></li>
+                        <li class="fade-top"><a class="hasHover" href="">Mentor AI</a></li>
+                        <li class="fade-top"><a class="hasHover" href="">Contact Us</a></li>
+                        <li class="fade-top"><a class="hasHover" href="">Blog</a></li>
+                        <li class="fade-top"><a class="hasHover" href="">Career</a></li>
+                    </ul>
+                    <ul class="footer-socical-media">
+                        <li class="fade-top"><a class="hasHover" href="">Instagram</a></li>
+                        <li class="fade-top"><a class="hasHover" href="">YouTube</a></li>
+                        <li class="fade-top"><a class="hasHover" href="">Facebook</a></li>
+                        <li class="fade-top"><a class="hasHover" href="">TikTok</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-component-description">
+                <p class="fade-top">Disclaimer:</p>
+                <p class="fade-top">*Our $10,000/month Guarantee is exclusive to Diamond+ Program enrollees, activating when you start our marketing services and ensuring $10,000 revenue over any 30-day period within 120 days. Note: Ecourse clients are ineligible. See terms and conditions for details, also highlighted in our demo.</p>
+                <p class="fade-top">*Purchasing our e-course provides access to training materials and business growth ideas but does not guarantee success. It does not offer legal or financial advice. We recommend consulting with professionals to ensure compliance with local and state laws.</p>
+                <p class="fade-top">Ecourse 100% Satisfaction Promise. If you are not satisfied for any reason,with the ecourse you have 48 hours from the purchase date to request a full refund by emailing <a href="mailto:support@remotecleanacademy.com"><b>support@remotecleanacademy.com</b></a></p>
+            </div>
+        </div>
+
+        <div class="copy-right-div">
+            <div class="copy-right-text">
+                <p>© 2025 Remote Cleaning Academy, LLC | All Rights Reserved</p>
+            </div>
+            <div class="privacy-menu">
+                <ul class="hasHover__parent">
+                    <li><a  class="hasHover" href="">Return Policy</a></li>
+                    <span>|</span>
+                    <li><a class="hasHover" href="">Privacy Policy</a></li>
+                    <span>|</span>
+                    <li><a class="hasHover" href="">Terms of Service</a></li>
+                    <span>|</span>
+                    <li><a class="hasHover" href="">Cookies Settings</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </footer>
+
+    <!-- Js -->
+    <script src="./js/jquery.js"></script>
+    <script src="./js/lenis.js"></script>
+    <script src="./js/gsap.js"></script>
+    <script src="./js/scrolltrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="./js/flickity.js"></script>
+    <script src="./js/custom.js"></script>
+</body>
+</html>
