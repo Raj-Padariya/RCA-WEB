@@ -283,11 +283,13 @@ img {max-width: 100%;height: auto;display: flex;}
     text-transform: capitalize;
     transition: 0.5s all ease-in-out;
     padding: 16px 20px;
+    border: 1px solid transparent;
     width: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 56px;
+    transition: 0.5s;
 
 }
 
@@ -315,7 +317,8 @@ img {max-width: 100%;height: auto;display: flex;}
     background: var(--gradient-primary);
     color: var(--white);
     border-radius: 50px;
-    text-transform: capitalize;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
     transition: 0.5s all ease-in-out;
     padding: 16px 20px;
     width: fit-content;
@@ -324,6 +327,11 @@ img {max-width: 100%;height: auto;display: flex;}
     justify-content: center;
     height: 56px;
     min-width: 150px;
+}
+
+.solid-btn-graident:hover{
+    background: linear-gradient(-270deg, #2BA2FF 0%, #3E00FF 100%);
+
 }
 
 
@@ -405,10 +413,31 @@ header nav{
     column-gap: 15px;
 }
 
+.header-rca-logo{
+    display: flex;
+}
+
+.header-rca-logo a img{
+    width: 200px;
+}
+
+
+
+.header-btn .solid-btn-black:hover{
+    background-color: transparent;
+    color: var(--black);
+    border: 1px solid var(--black);
+}
+
+.header-btn .border-btn:hover{
+    background-color: var(--black);
+    color: var(--white);
+}
+
 /*  */
 
 .toggle {
-    width: 25px;
+    width: 30px;
     height: 25px;
     cursor: pointer;
     right: 0px;
@@ -421,7 +450,7 @@ header nav{
     position: absolute;
     top: 0px;
     right: 0px;
-    height: 2px;
+    height: 4px;
     width: 100%;
     background: var(--gradient-primary);
     transition: 0.3s linear;
@@ -433,7 +462,7 @@ header nav{
     position: absolute;
     top: 0px;
     left: 0px;
-    height: 2px;
+    height: 4px;
     width: 100%;
     background: var(--gradient-primary);
     transition: 0.3s linear;
@@ -452,7 +481,7 @@ header nav{
 /*  */
 .hero-banner{
     display: flex;
-    column-gap: 80px;
+    /* column-gap: 80px; */
 }
 
 
@@ -463,6 +492,9 @@ header nav{
 
 .hero-banner-content-heading{
     margin-bottom: 30px;
+}
+.hero-banner-content-heading h1{
+    max-width: 744px;
 }
 .hero-banner-content-btn{
     position: relative;
@@ -518,10 +550,15 @@ header nav{
   }
 .hero-banner-video{
     position: relative;
-    height: 100%;
+    height: auto;
 }
 .hero-banner-video img{
     border-radius: 30px;
+}
+
+.hero-banner-video img{
+    height: 100%;
+    object-fit: cover;
 }
 .watch-intro-btn{
     position: absolute;
@@ -554,6 +591,7 @@ header nav{
 }
 .watch-intro-play img{
     border-radius: 0;
+    height: auto;
 }
 
 .hero-section{
@@ -655,7 +693,7 @@ header nav{
 
 /*  */
 .active-income-section{
-    padding: 100px 0;
+    padding: 10px 0;
 }
 .active-income-heading{
     margin-bottom: 50px;
@@ -1030,6 +1068,7 @@ header nav{
   /*  */
 
 
+
   
 
   .testimonial-slider-section{
@@ -1056,6 +1095,10 @@ header nav{
     column-gap: 30px;
     /* max-width: fit-content; */
 
+  }
+
+  .Testimonial-Slider .testimonial-slide{
+    transition: .5s;
   }
 
   .Testimonial-Slider .owl-item.active.center .testimonial-slide{

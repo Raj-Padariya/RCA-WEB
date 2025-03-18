@@ -21,6 +21,7 @@ $('.product-linup-slider').owlCarousel({
   center:true,
   margin:30,
   nav:true,
+  animateOut: 'fadeOut',
   responsive:{
       0:{
           items:1
@@ -43,6 +44,7 @@ $('.Testimonial-Slider').owlCarousel({
   center:true,
   margin:30,
   nav:true,
+  animateOut: 'fadeOut',
   responsive:{
       0:{
           items:1

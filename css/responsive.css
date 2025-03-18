@@ -3,7 +3,7 @@
         .container,
         header .container,
         .hero-section .container {
-        max-width: 96%;
+        max-width: 94%;
     }
 
     h1{
@@ -46,7 +46,7 @@
         flex: auto;
     }
     .common-arrow-btn{
-        margin-bottom: 60px;
+        margin-bottom: 130px;
     }
 
     .main-menu{
@@ -72,7 +72,6 @@
 
     .automated-side-section{padding: 80px 0;}
 
-    .active-income-section{padding: 80px 0;}
 
     .access-all-video-section{padding: 80px 0;}
 
@@ -133,7 +132,6 @@
 
     .hero-section,
     .automated-side-section,
-    .active-income-section,
     .access-all-video-section,
     .just-five-client-section,
     .client-earning-section,
@@ -165,7 +163,7 @@
         max-width: 30px;
     }
     .leader-board-slids::before{
-        height: 132px;
+        height: 172px;
     }
     .client-earning-div{
         gap: 30px;
@@ -200,7 +198,6 @@
 
     .automated-side-section{padding: 60px 0;}
 
-    .active-income-section{padding: 60px 0;}
 
     .access-all-video-section{padding: 60px 0;}
 
@@ -261,10 +258,14 @@
         justify-content: start;
     }
 
+    .header-rca-logo a img {
+        width: 160px;
+    }
+
     .toggle {
         display: block;
         position: absolute;
-        top: 30px;
+        top: 35px;
         right: 20px;
     }
     nav{
@@ -303,6 +304,7 @@
     }
 
 
+
     .main-menu li a{ 
         font-size: 22px;
         font-weight: 500;
@@ -314,6 +316,14 @@
     .header-btn{
         padding-top: 30px;
         padding-left: 30px;
+    }
+
+    .automated-side-boxes{
+        column-gap: 20px;
+    }
+
+    .card_overlay{
+        width: 90%;
     }
 }
 @media (max-width:991px){
@@ -344,6 +354,7 @@
         position: relative;
         transform: translate(0) !important;
         left: 0;
+        width: 100%;
     }
     .cards-container{
         display: flex;
@@ -354,7 +365,13 @@
     .video_scale_animation-main{
         min-height: auto;
     }
+
+
+    .common-arrow-btn {
+        margin-bottom: 60px;
+    }
 }
+
 
 @media (max-width:820px){
     .hero-banner-logo-slider{
@@ -365,6 +382,17 @@
     }
     .client-earning-content {
         max-width: 420px;
+    }
+
+    .leader-board-slids::before{
+        height: 92px;
+    }
+    .solid-btn-graident{
+        height: 46px;
+        font-size: 14px;
+    }
+    .client-earning-btn h6 {
+        font-size: 14px;
     }
 }
 @media (max-width:767px) {
