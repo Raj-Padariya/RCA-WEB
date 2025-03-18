@@ -947,9 +947,7 @@ header nav{
     /* border-radius: 10px; */
   }
 
-
-/* Custom drag cursor styles */
-.custom-drag-cursor {
+  .custom-drag-cursor {
     position: fixed;
     width: 50px;
     height: 50px;
@@ -959,10 +957,12 @@ header nav{
     z-index: 9999;
     transform: translate(-50%, -50%);
     transition: transform 0.2s ease-out, opacity 0.2s;
-    opacity: 0;
+    opacity: 0; /* Initially hidden */
   }
   
-  .custom-drag-cursor.slider-active {opacity: 1 !important ;}
+  .custom-drag-cursor.slider-active {
+    opacity: 1 !important;
+  }
   .custom-drag-cursor.dragging {
     transform: scale(0.1);
   }

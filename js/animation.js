@@ -15,19 +15,17 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   
-    // Hide cursor when the mouse leaves the window
-    window.addEventListener("mouseout", (e) => {
-      // If no related element, pointer left the window
-      if (!e.relatedTarget && !e.toElement) {
-        cursor.style.opacity = "0";
-      }
-    });
+    // Commented out to test visibility
+    // window.addEventListener("mouseout", (e) => {
+    //   if (!e.relatedTarget && !e.toElement) {
+    //     cursor.style.opacity = "0";
+    //   }
+    // });
   
     // Add dragging effect when clicking anywhere
     document.addEventListener("mousedown", () => {
       cursor.classList.add("dragging");
     });
-  
     document.addEventListener("mouseup", () => {
       cursor.classList.remove("dragging");
     });
@@ -42,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+  
   
   
   
