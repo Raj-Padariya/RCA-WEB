@@ -182,24 +182,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // change border radius on scrollh this will work for indivuila section
-function changeBorderRadius() {
-  const sections = document.querySelectorAll(".radius-top"); // sections to change border radius
-
-  sections.forEach((section) => {
-    gsap.to(section, {
-      scrollTrigger: {
-        trigger: section,          // Each section triggers its own animation
-        start: "top 100%",         // Trigger when the top of the section is in view
-        end: "top 50%",            // End when the top of the section reaches 50% of the viewport
-        scrub: 0.1,                // Smooth scroll animation
-        markers: true,            // Disable markers (you can set this to true for debugging)
-      },
-      borderRadius: "60px 60px 0 0", // Apply the border radius change
+  function changeBorderRadius() {
+    const sections = document.querySelectorAll(".radius-top"); // sections to change border radius
+  
+    sections.forEach((section) => {
+      gsap.to(section, {
+        scrollTrigger: {
+          trigger: section,          // Each section triggers its own animation
+          start: "top 100%",         // Trigger when the top of the section is in view
+          end: "top 50%",            // End when the top of the section reaches 50% of the viewport
+          scrub: 0.1,                // Smooth scroll animation
+          markers: false,             // Debugging: enable markers (set to false when not needed)
+        },
+        borderRadius: "60px 60px 0 0", // Apply the border radius change
+      });
     });
-  });
-}
-
-changeBorderRadius();
+  }
+  
+  changeBorderRadius();
+  
 
 function scalingImageEffect() {
   const images = document.querySelectorAll('.scaling_image-img');
@@ -283,7 +284,7 @@ document.querySelectorAll(".moving_boxContainer").forEach((section, index) => {
     gsap.set(rightBox, { xPercent: -80 });
 
     // Check screen width and apply animations only if width is greater than 768px
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 991) {
 
       // Animate left box into place
       gsap.to(leftBox, {
@@ -334,35 +335,41 @@ document.querySelectorAll(".moving_boxContainer").forEach((section, index) => {
 
 document.addEventListener("DOMContentLoaded", function () {
 
+  
   function textAnimation() {
      
       const sections = document.querySelectorAll(".mask__containerArea, .meet-product-linup-heading, .automated-section-heading, .just-five-client-heading, .active-income-heading, .access-all-video-heading, .testimonial-slider-haeading, .automated-side-box");
 
-      sections.forEach((section) => {
-         
-          const splitTypes = section.querySelectorAll(".mask_elementText, h2, p, h5, h3");
 
-          splitTypes.forEach((charElement) => {
-             
-              const splitText = new SplitType(charElement, { types: "chars" });
+      if (window.innerWidth > 991) {
 
-             
-              gsap.from(splitText.chars, {
-                  scrollTrigger: {
-                      trigger: section,
-                      start: "top bottom",
-                      end: "50% 70%",
-                      scrub: true,
-                      markers: false,
-                     
-                  },
-                  opacity: 0.3,
-                  duration: 1,
-                  stagger: 0.3,
-                  ease: "linear",
-              });
-          });
-      });
+        sections.forEach((section) => {
+          
+            const splitTypes = section.querySelectorAll(".mask_elementText, h2, p, h5, h3");
+
+            splitTypes.forEach((charElement) => {
+              
+                const splitText = new SplitType(charElement, { types: "chars" });
+
+              
+                gsap.from(splitText.chars, {
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top bottom",
+                        end: "50% 70%",
+                        scrub: true,
+                        markers: false,
+                      
+                    },
+                    opacity: 0.3,
+                    duration: 1,
+                    stagger: 0.3,
+                    ease: "linear",
+                });
+            });
+        });
+      }
+
   }
 
   textAnimation();
@@ -481,64 +488,83 @@ videoAutoplayPause();
 
 
 
-function siteAnimationFn() {
-  if (window.innerWidth > 768) {
 
-    gsap.utils.toArray(".board-slid").forEach((block) => {
-      gsap.fromTo(
-        block,
-        {
-          y: "25%",
-          opacity: 0,
-        },
-        {
-          y: "0%",
-          opacity: 1,
-          stagger: 1,
-          ease: "linear",
-          duration: 0.3,
-          scrollTrigger: {
-            markers: false,  
-            trigger: block, // Trigger for each individual block
-            start: "top 65%",
-            end: "bottom 30%",
-            toggleActions: "play none none reverse",
-          },
+
+// Play video on enter and pause on leave
+gsap.timeline({
+  scrollTrigger: {
+    trigger: ".video_scale_animation-main",
+    start: "top top",
+    end: "bottom bottom",
+    scrub: 0.2,
+    markers: false,
+    onEnter: function () {
+      const video = document.getElementById("myVideo");
+      if (video && !video.hasAttribute("autoplay")) {
+        video.setAttribute("autoplay", "true");
+      }
+      video.play();
+    },
+    onLeave: function () {
+      const video = document.getElementById("myVideo");
+      if (video) {
+        video.pause(); // Pause video when leaving
+      }
+    },
+  },
+});
+
+// Run this only on desktop view
+if (window.innerWidth > 991) {
+  let videoScaleTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".video_scale_animation-main",
+      start: "top top",
+      end: "+=" + window.innerHeight,
+      scrub: 0.2,
+      markers: false,
+      pin: true,
+      pinSpacing: true, // Keep spacing intact
+      onEnter: function () {
+        const video = document.getElementById("myVideo");
+        if (video && !video.hasAttribute("autoplay")) {
+          video.setAttribute("autoplay", "true");
         }
-      );
+        video.play();
+      },
+      onLeave: function () {
+        const video = document.getElementById("myVideo");
+        if (video) {
+          video.pause(); // Pause the video when leaving
+        }
+      },
+      onComplete: function () {
+        // Refresh ScrollTrigger to avoid animation conflict
+        setTimeout(() => {
+          ScrollTrigger.refresh();
+        }, 500);
+      },
+    },
+  });
+
+  videoScaleTimeline
+    .from(".video_scale_animation .has_video_scale", {
+      scale: 0.7,
+      borderRadius: "20px",
+    })
+    .to(".video_scale_animation .has_video_scale", {
+      scale: 1,
+      borderRadius: "0px",
     });
-  }
 }
 
-siteAnimationFn();
+// Refresh all ScrollTriggers to ensure no overlap
+setTimeout(() => {
+  ScrollTrigger.refresh();
+}, 500);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 
 
 
@@ -547,6 +573,51 @@ siteAnimationFn();
 
 //  Footer animation js
 document.addEventListener('DOMContentLoaded', () => {
+
+
+
+
+
+
+  function siteAnimationFn() {
+    if (window.innerWidth > 0) {
+      gsap.utils.toArray(".board-slid").forEach((block) => {
+        gsap.fromTo(
+          block,
+          {
+            y: "25%",
+            opacity: 0,
+          },
+          {
+            y: "0%",
+            opacity: 1,
+            stagger: 0.1,
+            ease: "linear",
+            duration: 0.1,
+            scrollTrigger: {
+              markers: false,
+              trigger: block,
+              start: "top 65%",
+              end: "bottom 30%",
+              scrub: true,
+            },
+          }
+        );
+      });
+    }
+  }
+  
+  siteAnimationFn();
+
+
+
+
+
+
+
+
+
+
   if (!gsap || !gsap.registerPlugin) {
     console.error('GSAP or ScrollTrigger plugin not found!')
     return
@@ -584,59 +655,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   )
 });
-
-
-
-
-
-
-
-
-
- gsap.timeline({
-    scrollTrigger: {
-      trigger: ".video_scale_animation-main", 
-      start: "top top", 
-      end: "bottom bottom", 
-      scrub: 0.2, 
-      markers: false, 
-      onEnter: function () {
-        const video = document.getElementById('myVideo');
-        if (!video.hasAttribute('autoplay')) {
-          video.setAttribute('autoplay', 'true');
-        }
-        video.play(); 
-      }
-    }
-  });
-  
-  if (window.innerWidth > 768) {
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: ".video_scale_animation-main", 
-        start: "top top", 
-        end: "bottom top", 
-        scrub: 0.2, 
-        markers: false, 
-        pin: true, 
-        // pinspacing: false,
-      }
-    })
-    .from(".video_scale_animation .has_video_scale", {
-      scale: 0.7,
-      borderRadius: "20px",
-    })
-    .to(".video_scale_animation .has_video_scale", {
-      scale: 1, 
-      borderRadius: "0px",
-    });
-  }
-
-
-
-
-
-
 
 
 

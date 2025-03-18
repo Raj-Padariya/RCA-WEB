@@ -788,9 +788,11 @@ header nav{
 
 .just-five-client-video{
     margin-bottom: 50px;
+    text-align: center;
 }
 
-.just-five-client-video img{
+.just-five-client-video video{
+    max-width: 70%;
     margin: 0 auto;
 }
 
@@ -907,9 +909,9 @@ header nav{
 
 /*  video scaling animation */
 
-.video_scale_animation-main {height: 100vh; text-align: center; position: sticky; top: 0;   z-index: 10; }
+.video_scale_animation-main {min-height: 100vh; text-align: center; position: sticky; top: 0;   z-index: 10; }
 .video_scale_animation-main .video_scale_animation {position: relative; display: flex; justify-content: center;align-items: center; height: 100%;}
-.video_scale_animation-main .video_scale_animation video { /* height: 100vh; */ object-fit: cover; display: flex; width: 100%; }
+.video_scale_animation-main .video_scale_animation video { object-fit: cover; display: flex; width: 100%; }
 .video_scale_animation-main .video_scale_animation .has_video_scale { width: 100%;  overflow:hidden;  }
 .video_scale_animation-main .video_scale_animation video + .volume-btn { position: absolute; bottom: 20px; right: 20px; cursor: pointer; }
 
