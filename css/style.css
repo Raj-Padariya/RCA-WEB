@@ -1238,6 +1238,10 @@ header nav{
     margin: 0 auto;
 }
 
+.pin-slider-heading h2{
+    margin-bottom: 20px;
+}
+
   .pinned-section {
     position: relative;
     min-height: 100vh;

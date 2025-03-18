@@ -313,8 +313,10 @@
         margin: 0 auto;
     } */
 
-    .card_overlay{
+    .card_overlay {
         position: relative;
+        transform: translate(0) !important;
+        left: 0;
     }
     .cards-container{
         display: flex;
@@ -327,7 +329,17 @@
     }
 }
 
-
+@media (max-width:820px){
+    .hero-banner-logo-slider{
+        max-width: fit-content;
+    }
+    .hero-banner .hero-banner-content{
+        max-width: 740px;
+    }
+    .client-earning-content {
+        max-width: 420px;
+    }
+}
 @media (max-width:767px) {
     h1{
         font-size: 38px;
