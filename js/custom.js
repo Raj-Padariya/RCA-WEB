@@ -181,26 +181,30 @@ cardOverlapping();
 document.addEventListener("DOMContentLoaded", function () {
 
 
-  // change border radius on scrollh this will work for indivuila section
-  function changeBorderRadius() {
+// change border radius on scroll for individual sections
+function changeBorderRadius() {
+  if (window.innerWidth > 991) {
     const sections = document.querySelectorAll(".radius-top"); // sections to change border radius
-  
+
     sections.forEach((section) => {
       gsap.to(section, {
         scrollTrigger: {
-          trigger: section,          // Each section triggers its own animation
-          start: "top 100%",         // Trigger when the top of the section is in view
-          end: "top 50%",            // End when the top of the section reaches 50% of the viewport
-          scrub: 0.1,                // Smooth scroll animation
-          markers: false,             // Debugging: enable markers (set to false when not needed)
+          trigger: section, // Each section triggers its own animation
+          start: "top 100%", // Trigger when the top of the section is in view
+          end: "top 50%", // End when the top of the section reaches 50% of the viewport
+          scrub: 0.1, // Smooth scroll animation
+          markers: false, // Debugging: enable markers (set to false when not needed)
         },
         borderRadius: "60px 60px 0 0", // Apply the border radius change
       });
     });
   }
-  
-  changeBorderRadius();
-  
+}
+
+// Run on load and resize to handle viewport changes
+changeBorderRadius();
+window.addEventListener("resize", changeBorderRadius);
+
 
 function scalingImageEffect() {
   const images = document.querySelectorAll('.scaling_image-img');
@@ -239,6 +243,9 @@ function scalingImageEffectd() {
     return;
   }
 
+
+  if(window.innerWidth > 991) {
+
   elem.forEach((elements) => {
     gsap.fromTo(
       elements,
@@ -258,6 +265,7 @@ function scalingImageEffectd() {
     );
   });
 }
+}
 
 
 
@@ -273,6 +281,11 @@ function scalingImageEffectd() {
 
 
 
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  
 document.querySelectorAll(".moving_boxContainer").forEach((section, index) => {
   const leftBox = section.querySelector(".left");
   const rightBox = section.querySelector(".right");
@@ -331,11 +344,8 @@ document.querySelectorAll(".moving_boxContainer").forEach((section, index) => {
     console.warn(`Section ${index} is missing left or right box.`);
   }
 });
-
-
-document.addEventListener("DOMContentLoaded", function () {
-
   
+
   function textAnimation() {
      
       const sections = document.querySelectorAll(".mask__containerArea, .meet-product-linup-heading, .automated-section-heading, .just-five-client-heading, .active-income-heading, .access-all-video-heading, .testimonial-slider-haeading, .automated-side-box");
@@ -524,7 +534,7 @@ if (window.innerWidth > 991) {
       scrub: 0.2,
       markers: false,
       pin: true,
-      pinSpacing: true, // Keep spacing intact
+      // pinSpacing: true, // Keep spacing intact
       onEnter: function () {
         const video = document.getElementById("myVideo");
         if (video && !video.hasAttribute("autoplay")) {
@@ -538,12 +548,12 @@ if (window.innerWidth > 991) {
           video.pause(); // Pause the video when leaving
         }
       },
-      onComplete: function () {
-        // Refresh ScrollTrigger to avoid animation conflict
-        setTimeout(() => {
-          ScrollTrigger.refresh();
-        }, 500);
-      },
+      // onComplete: function () {
+      //   // Refresh ScrollTrigger to avoid animation conflict
+      //   setTimeout(() => {
+      //     ScrollTrigger.refresh();
+      //   }, 500);
+      // },
     },
   });
 
@@ -559,9 +569,9 @@ if (window.innerWidth > 991) {
 }
 
 // Refresh all ScrollTriggers to ensure no overlap
-setTimeout(() => {
-  ScrollTrigger.refresh();
-}, 500);
+// setTimeout(() => {
+//   ScrollTrigger.refresh();
+// }, 500);
 
 
 
