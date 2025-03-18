@@ -9,68 +9,10 @@
     <link rel="stylesheet" href="./css/style.css"  >
     <link rel="stylesheet" href="./css/responsive.css">
 </head>
-<body>
+<body style="overflow: hidden;">
 
 
 <!-- preloader -->
-
-<style>
-    /* Preloader Container */
-    .preloader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #fff;
-      z-index: 9999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: 0.5s;
-    }
-    .preloader-finish {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-    .preloader-content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-    .preloader-logo {
-      width: 200px;
-      height: 200px;
-      user-select: none;
-      /* margin-bottom: 20px; */
-    }
-    /* Logo Animation: Scale up and fade out */
-    @keyframes scaleAndFade {
-      0% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      50% {
-        transform: scale(10); /* Scales to 150% */
-        opacity: .7;
-      }
-      70% {
-        transform: scale(15); /* Scales to 150% */
-        opacity: .5;
-      }
-      100% {
-        transform: scale(20); /* Scales to 150% */
-        opacity: 0;
-      }
-    }
-    /* Apply the animation when this class is added */
-    .animate-logo {
-      animation: scaleAndFade 0.8s forwards linear;
-    }
-
-</style>
 <div class="preloader">
     <div class="preloader-content">
         <div class="preloader-logo">
@@ -78,17 +20,6 @@
         </div>
     </div>
 </div>
-<script>
-    window.addEventListener('load', function() {
-      
-      document.querySelector('.preloader-logo img').classList.add('animate-logo');
-      
-      
-      setTimeout(function() {
-        document.querySelector('.preloader').classList.add('preloader-finish');
-      }, 1200); 
-    });
-  </script>
 
 
 
@@ -106,37 +37,41 @@
 
 <header>
     <div class="container">
-        <nav>
-            <div class="header-menu">
-                <div class="header-rca-logo">
-                    <a href="#">
-                        <img src="./assets/images/rca-logo.svg" alt="">
-                    </a>
-                </div>
-
-                <ul class="main-menu">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Testimonial</a></li>
-                    <li><a href="">Leaderboard</a></li>
-                    <li><a href="">Diamond+</a></li>
-                    <li><a href="">Contact Us</a></li>
-                </ul>
+        <div class="header-navigation">
+            <div class="header-rca-logo">
+                <a href="#">
+                    <img src="./assets/images/rca-logo.svg" alt="">
+                </a>
             </div>
-            <div class="header-btn">
-                <div class="header-login">
-                    <a href="#" class="border-btn">Log In</a>
+            <nav>
+                <div class="header-menu">
+    
+                    <ul class="main-menu">
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Testimonial</a></li>
+                        <li><a href="">Leaderboard</a></li>
+                        <li><a href="">Diamond+</a></li>
+                        <li><a href="">Contact Us</a></li>
+                    </ul>
                 </div>
-                <div class="header-book-call siteGradient_buttonHasGradient">
-                    <div class="siteGradient__backGround_container">
-                        <span class="siteGradient__backGround"></span>
+                <div class="header-btn">
+                    <div class="header-login">
+                        <a href="#" class="border-btn">Log In</a>
                     </div>
-                    <a href="#" class="solid-btn-black">Book Demo Call</a>
-
+                    <div class="header-book-call siteGradient_buttonHasGradient">
+                        <div class="siteGradient__backGround_container">
+                            <span class="siteGradient__backGround"></span>
+                        </div>
+                        <a href="#" class="solid-btn-black">Book Demo Call</a>
+    
+                    </div>
                 </div>
+            </nav>
+            <div class="toggle"> 
+                <span class="toggle-icon"></span>
             </div>
-
-        </nav>
+        </div>
     </div>
 </header>
 
@@ -568,9 +503,9 @@
                 <h5 class="graident-title">Founded By True Business Experts</h5>
                 <h2>Why Work With Us?</h2>
             </div>
-            <div class="why-work-with-us-text ">
-                <p class="mask_elementText">Most small businesses fail due to a lack of the right tools, resources, and guidance. We’ve changed that by eliminating the guesswork and setting you up for success from day one. We build your systems and branding using strategies that have scaled multi-million-dollar brands—now custom-built and affordable for our clients. With cutting-edge software and expert branding, we position you for success in just days.</p>
-                <p class="mask_elementText">Our founding team has scaled brands like Angi’s List, Molly Maids, and many other multi-million-dollar service brands. We’ve also founded companies like Blue Tees Golf and Custom Esignature, and serve as board members for top digital marketing brands like Ignite Visibility.</p> 
+            <div class="why-work-with-us-text mask_elementText">
+                <p>Most small businesses fail due to a lack of the right tools, resources, and guidance. We’ve changed that by eliminating the guesswork and setting you up for success from day one. We build your systems and branding using strategies that have scaled multi-million-dollar brands—now custom-built and affordable for our clients. With cutting-edge software and expert branding, we position you for success in just days.</p>
+                <p>Our founding team has scaled brands like Angi’s List, Molly Maids, and many other multi-million-dollar service brands. We’ve also founded companies like Blue Tees Golf and Custom Esignature, and serve as board members for top digital marketing brands like Ignite Visibility.</p> 
             </div>
             <div class="why-work-us-img enlarge__inView">
                 <img class="scaling_image-img" src="./assets/images/why-work-us.jpg" alt="">
@@ -765,7 +700,10 @@
     <script src="./js/lenis.js"></script>
     <script src="./js/gsap.js"></script>
     <script src="./js/scrolltrigger.min.js"></script>
-    <script src="https://unpkg.com/split-type"></script>
+    <script src="./js/split-type.js"></script>
+    <!-- <script src="
+https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js
+"></script> -->
     <script src="./js/flickity.js"></script>
     <script src="./js/custom.js"></script>
 </body>

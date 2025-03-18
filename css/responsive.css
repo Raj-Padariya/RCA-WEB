@@ -1,0 +1,587 @@
+
+@media (max-width:1600px){
+        .container,
+        header .container,
+        .hero-section .container {
+        max-width: 96%;
+    }
+
+    h1{
+        font-size: 60px;
+    }
+    h2{
+        font-size: 60px;
+    }
+    h3{
+        font-size: 42px;
+    }
+    h4{
+        font-size: 28px;
+    }
+    h5{
+        font-size: 24px;
+    }
+    p{
+        font-size: 22px;
+        line-height: 1.4;
+    }
+
+
+    .watch-intro-btn{
+        padding: 5px 5px 5px 20px;
+        bottom: 20px;
+        left: 20px;
+    }
+    .watch-intro-btn .watch-intro-play{
+        height: 54px;
+        width: 54px;
+    }
+
+
+}
+
+@media (max-width:1500px){
+    .hero-banner .hero-banner-content{
+        max-width: 620px;
+        flex: auto;
+    }
+    .common-arrow-btn{
+        margin-bottom: 60px;
+    }
+
+    .main-menu{
+        column-gap: 35px;
+    }
+    .automated-section-heading h2{
+        max-width: 550px;
+    }
+    .automated-side-box{
+        padding: 30px;
+        row-gap: 28px;
+    }
+    .client-earning-content {
+        max-width: 600px;
+    }
+    .client-earning-content h2{
+        max-width: 460px;
+    }
+
+    .hero-section{padding: 50px 0 80px;border-radius: 0 0 40px 40px;}
+
+    .siteVelocity__slider{gap: 70px;}
+
+    .automated-side-section{padding: 80px 0;}
+
+    .active-income-section{padding: 80px 0;}
+
+    .access-all-video-section{padding: 80px 0;}
+
+    .just-five-client-section{padding: 80px 0;}
+
+    .client-earning-section{padding: 80px 0;}
+
+    .meet-product-linup-section{padding: 80px 0;}
+
+    .why-work-with-us-section{padding: 80px 0;}
+
+    .testimonial-slider-section{padding: 80px 0;}
+
+    .cta-section{padding: 80px 0;}
+
+    .footer-logo img{max-width: 200px;}
+    
+}
+
+
+
+@media (max-width:1360px){
+    h1 {
+        font-size: 50px;
+    }
+    h2 {
+        font-size: 50px;
+    }
+    h3{
+        font-size: 32px
+    }
+
+    p{
+        font-size: 18px
+    }
+
+    .main-menu{column-gap: 20px;}
+    
+    .border-btn{
+        height: 48px;
+    }
+    .solid-btn-black{
+        height: 48px;
+    }
+
+
+
+    .hero-section,
+    .automated-side-section,
+    .active-income-section,
+    .access-all-video-section,
+    .just-five-client-section,
+    .client-earning-section,
+    .meet-product-linup-section,
+    .why-work-with-us-section,
+    .testimonial-slider-section,
+    .testimonial-slider-section{
+        padding: 70px 0;
+    }
+
+    .hero-banner .hero-banner-content{
+        max-width: 450px;
+    }
+
+    .hero-banner{
+        column-gap: 40px;
+    }
+
+
+    .active-income-heading h2{
+        max-width: 570px;
+    }
+
+    .automated-side-dote{
+        width: 60px;
+        height: 60px;
+    }
+    .automated-side-dote img{
+        max-width: 30px;
+    }
+    .leader-board-slids::before{
+        height: 132px;
+    }
+    .client-earning-div{
+        gap: 30px;
+    }
+    .client-earning-content{
+        max-width: 490px;
+    }
+    .client-earning-content h2{
+        max-width: 380px;
+    }
+
+    .footer-component-nav{
+        column-gap: 70px;
+    }
+    .footer-component{
+        column-gap: 50px;
+    }
+    .footer-component-description p{
+        font-size: 16px;
+    }
+    .copy-right-div{
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 20px;
+    }
+
+    .cta-content h2{
+        max-width: 670px;
+        margin: 0 auto 20px;
+    }
+    .cta-content p{
+        margin: 0 auto 20px;
+    }
+
+    .siteVelocity__slider{gap: 40px;}
+
+    .automated-side-section{padding: 60px 0;}
+
+    .active-income-section{padding: 60px 0;}
+
+    .access-all-video-section{padding: 60px 0;}
+
+    .just-five-client-section{padding: 60px 0;}
+
+    .client-earning-section{padding: 60px 0;}
+
+    .meet-product-linup-section{padding: 60px 0;}
+
+    .why-work-with-us-section{padding: 60px 0;}
+
+    .testimonial-slider-section{padding: 60px 0;}
+
+    .cta-section{padding: 60px 0;}
+
+    .footer-logo img{max-width: 200px;}
+}
+
+
+@media (max-width:1199px){
+    
+    .testimonial-slide-content p{
+        font-size: 16px;
+    }
+
+
+
+    .main-menu,
+    .header-menu{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav{
+        flex-direction: column;
+        align-items: flex-start;
+        transition: 0.5s;
+        justify-content: start;
+    }
+
+    .toggle {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 20px;
+    }
+    nav{
+        position: fixed;
+        top: 50px;
+        background: aliceblue;
+        left: 0;
+        height: 100vh;
+        z-index: 1;
+        left: -100%;
+    }
+    nav.open{
+        left: 0;
+    }
+
+    .open .toggle-icon::before {
+        visibility: visible;
+        opacity: 1;
+        top: 0;
+        transition: .3s linear;
+        transform: rotate(90deg);
+        background-color: var(--blue-color);
+    }
+    .open .toggle-icon::after {
+        top: 0;
+        transition: .3s linear;
+        transform: rotate(0);
+        background-color: var(--blue-color);
+        width: 100%;
+    }
+    .open .toggle-icon {
+        top: 10px;
+        transition: .3s linear;
+        transform: rotate(42deg);
+        background-color: var(--blue-color);
+    }
+
+
+    .main-menu li a{ 
+        font-size: 22px;
+        font-weight: 500;
+    }
+    .main-menu{ 
+        row-gap: 20px;
+        padding: 50px 0 0 30px;
+    }
+    .header-btn{
+        padding-top: 30px;
+        padding-left: 30px;
+    }
+}
+
+
+
+@media (max-width:767px) {
+    h1{
+        font-size: 38px;
+    }
+    h2{
+        font-size: 38px;
+    }
+    h3{
+        font-size: 30px;
+    }
+    h4{
+        font-size: 20px;
+    }
+
+    h5{
+        font-size: 18px;
+    }
+
+
+    p{
+        font-size: 18px;
+    }
+
+
+    a{
+        font-size: 14px;
+    }
+
+
+    .solid-btn-black{
+        font-size: 14px;
+        height: 42px;
+    }
+    .border-btn{
+        font-size: 14px;
+        height: 42px;
+    }
+
+    .btn-arrow-white{
+        height: 42px;
+        width: 42px;
+    }
+
+    .solid-btn-graident{
+        font-size: 14px;
+        height: 42px;
+    }
+
+   .container,
+   header .container,
+   .hero-section .container {
+        max-width: 94%;
+    }
+    
+    
+
+
+    /*  */
+    .hero-banner{
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    .hero-banner-content-heading{
+        margin-bottom: 20px;
+    }
+    .common-arrow-btn{
+        margin-bottom: 30px;
+    }
+    .hero-section{
+        border-radius: 0 0 30px 30px;
+        padding: 0 0 50px;
+    }
+
+    .automated-side-boxes{
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    .automated-side-box{
+        row-gap: 20px;
+        padding: 30px;
+        border-radius: 20px;
+    }
+
+    .automated-side-dote{
+        height: 50px;
+        width: 50px;
+    }
+    .automated-side-dote img{
+        max-width: 30px ;
+    }
+
+    .active-income-heading{
+        margin-bottom: 30px;
+    }
+    .active-income-gif{
+        margin-bottom: 30px;
+    }
+
+    .automated-side-section.dark{
+        border-radius: 0 0 30px 30px;
+    }
+    .automated-side-section{
+        padding: 50px 0;
+    }
+
+    .access-all-video-section{
+        padding: 50px 0;
+    }
+    .access-all-video-heading{
+        margin-bottom: 30px;
+    }
+
+    .just-five-client-section{
+        padding: 50px 0;
+    }
+
+
+    .client-earning-div{
+        flex-direction: column;
+        row-gap: 30px;
+    }
+    .client-earning-btn h6{
+        font-size: 14px;
+    }
+    .meet-product-linup-section{
+        padding: 50px 0;
+    }
+    .testimonial-slider-section{
+        padding: 50px 0;
+    }
+    .cta-section{
+        padding: 50px 0;
+    }
+
+    .why-work-with-us-section{
+        padding: 50px 0;
+    }
+
+    .video_scale_animation-main{
+        height: auto;
+    }
+
+    .hero-banner-video img {
+        border-radius: 20px;
+    }
+    .watch-intro-btn .watch-intro-play{
+        height: 40px;
+        width: 40px;
+    }
+
+    .watch-intro-play img {
+        border-radius: 0 !important;
+        max-width: 16px;
+    }
+
+    .testimonial-slide{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .carousel-cell img{
+        margin: 0 auto;
+    }
+
+    .slide-earning{
+        position: inherit;
+        margin-top: 20px;
+    }
+
+    .earning-time,
+    .slide-earning .earning{
+        padding-left: 20px;
+    }
+
+    .cta-content p{
+        margin-bottom: 20px;
+    }
+
+    .client-earning-section{
+        padding: 50px 0;
+    }
+
+    .leader-board-slids::before{
+        height: 138px;
+    }
+
+    .siteVelocity__slider{
+        gap: 50px;
+    }
+
+    .watch-intro-btn{
+        padding: 4px 5px 4px 20px;
+        left: 20px;
+        bottom: 20px;
+    }
+
+    .automated-section-heading h2{
+        max-width: 360px;
+    }
+
+
+    .card_overlay{
+        position: relative;
+    }
+    .cards-container{
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        padding: 15px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .footer-component{
+        flex-direction: column;
+        row-gap: 30px;
+        align-items: flex-start;
+    }
+
+    .copy-right-div{
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    .privacy-menu ul{
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+    .footer-component-description p{
+        font-size: 16px;
+    }
+    .copy-right-text p{
+        text-align: center;
+    }
+    .privacy-menu ul li{
+        width: 46%;
+        text-align: center;
+    }
+    .privacy-menu ul span:nth-child(4){
+        display: none;
+    }
+
+    .footer-component-links{
+        width: 100%;
+    }
+    .footer-logo a{
+        display: block;
+    }
+
+    .footer-logo a img{
+        max-width: 150px;
+        margin: 0 auto;
+    }
+    .footer-logo {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
+
+

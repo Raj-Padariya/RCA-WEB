@@ -1,3 +1,16 @@
+// Toggle menu after login
+$(document).ready(function () {
+  const $toggleButton = $('.toggle');
+  const $sidebarNav = $('nav');
+
+  $toggleButton.on('click', function () {
+    $sidebarNav.toggleClass('open');
+    $toggleButton.toggleClass('open');
+  });
+});
+
+
+
 /*
 ****************************************
 ****** ANIMATION SCRIPT START **********
@@ -6,7 +19,6 @@
 
 
 
-gsap.registerPlugin(ScrollTrigger);
 
 
 
@@ -24,66 +36,26 @@ gsap.ticker.lagSmoothing(0);
 
 
 
+gsap.registerPlugin(ScrollTrigger);
 
 
-// function cardOverlaping() {
+// PRELOADER ANIAMTION
 
+window.addEventListener('load', function() {
+  document.querySelector('.preloader-logo img').classList.add('animate-logo');
+  
+  setTimeout(function() {
+    document.querySelector('.preloader').classList.add('preloader-finish');
+    document.body.style.overflow = 'auto'; // Enable scrolling
+  }, 1200);
+});
 
-
-//     const cards = document.querySelectorAll(".card_overlay");
-
-//     cards.forEach((card, i) => {
-//       card.style.zIndex = i + 1;
-//     });
-
-//     const tl = gsap.timeline({
-//       scrollTrigger: {
-//         trigger: ".pinned-section",
-//         start: "top top",
-//         end: "+=" + (window.innerHeight * 3),
-//         scrub: true,
-//         pin: true,
-//       }
-//     });
-
-
-//     cards.forEach((card, i) => {
-//       tl.addLabel(`card${i}`);
-
-      
-//       tl.fromTo(card,
-//         { y: 100, opacity: 0, scale: 1 },
-//         { y: 0, opacity: 1, scale: 1, duration: 1, ease: "linear" },
-//         `card${i}`
-//       );
-
-      
-//       if (i > 0) {
-//         for (let j = 0; j < i; j++) {
-          
-//           const depth = i - j; 
-          
-//           let scaleVal   = 1 - 0.07 * depth;        
-//           let yVal       = -50 - 30 * (depth - 1);  
-//           let opacityVal = 1   - 0.1 * depth;       
-
-//           if (scaleVal < 0.4) scaleVal = 0.4;
-//           if (opacityVal < 0.3) opacityVal = 0.3;
-
-//           tl.to(cards[j], {
-//             scale: scaleVal,
-//             y: yVal,
-//             opacity: opacityVal,
-//             duration: 1,
-//             ease: "power1.out"
-//           }, `card${i}`);
-//         }
-//       }
-//     });
-// }
-// cardOverlaping();
 
 function cardOverlapping() {
+
+
+  if (window.innerWidth > 768) {
+
   const cards = document.querySelectorAll(".card_overlay");
 
   // Make sure each subsequent card has a higher zIndex
@@ -137,6 +109,9 @@ function cardOverlapping() {
       }
     }
   });
+
+}
+
 }
 
 // Call the function
@@ -146,148 +121,218 @@ cardOverlapping();
 
 
 
-// gsap.registerPlugin(ScrollTrigger);
 
 
+// document.addEventListener("DOMContentLoaded", function () {
 
 
-
-function videoScaleAnimation() {
-  const videoSection = document.querySelector(".video_scale_animation-main");
-  if (videoSection) {
-    // First timeline to handle video playback on enter.
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: videoSection, 
-        start: "top top", 
-        end: "bottom bottom", 
-        scrub: 0.2, 
-        markers: false,
-        onEnter: function () {
-          const video = document.getElementById('myVideo');
-          if (video) {
-            video.muted = true;
-            if (!video.hasAttribute('autoplay')) {
-              video.setAttribute('autoplay', 'true');
-            }
-            video.play();
-          }
-        },
-      }
-    });
+// function videoScaleAnimation() {
+//   const videoSection = document.querySelector(".video_scale_animation-main");
+//   if (videoSection) {
+//     // First timeline to handle video playback on enter.
+//     gsap.timeline({
+//       scrollTrigger: {
+//         trigger: videoSection, 
+//         start: "top top", 
+//         end: "bottom bottom", 
+//         scrub: 0.2, 
+//         markers: false,
+//         onEnter: function () {
+//           const video = document.getElementById('myVideo');
+//           if (video) {
+//             video.muted = true;
+//             if (!video.hasAttribute('autoplay')) {
+//               video.setAttribute('autoplay', 'true');
+//             }
+//             video.play();
+//           }
+//         },
+//       }
+//     });
     
-    // Second timeline for the scaling animation (only for wider screens).
-    if (window.innerWidth > 768) {
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: videoSection, 
-          start: "top top", 
-          end: "+=" + (window.innerHeight * 2), 
-          scrub: 0.2, 
-          markers: false,
-          pin: true,
-        }
-      })
-      .from(".video_scale_animation .has_video_scale", {
-        scale: 0.7,
-        borderRadius: "20px",
-      })
-      .to(".video_scale_animation .has_video_scale", {
-        scale: 1, 
-        borderRadius: "0px",
-      });
-    }
-  }
+//     // Second timeline for the scaling animation (only for wider screens).
+//     if (window.innerWidth > 768) {
+//       gsap.timeline({
+//         scrollTrigger: {
+//           trigger: videoSection, 
+//           start: "top top", 
+//           end: "+=" + (window.innerHeight * 2), 
+//           scrub: 0.2, 
+//           markers: false,
+//           pin: true,
+//         }
+//       })
+//       .from(".video_scale_animation .has_video_scale", {
+//         scale: 0.7,
+//         borderRadius: "20px",
+//       })
+//       .to(".video_scale_animation .has_video_scale", {
+//         scale: 1, 
+//         borderRadius: "0px",
+//       });
+//     }
+//   }
+// }
+// videoScaleAnimation();  
 
-  // Refresh all ScrollTriggers after setup.
-  ScrollTrigger.refresh();
-
-}
-videoScaleAnimation();  
-
-// Prallex Image
-
+// });
 
 
 document.addEventListener("DOMContentLoaded", function () {
 
 
+  // change border radius on scrollh this will work for indivuila section
+function changeBorderRadius() {
+  const sections = document.querySelectorAll(".radius-top"); // sections to change border radius
 
-  document.querySelectorAll(".moving_boxContainer").forEach((section, index) => {
-    const leftBox = section.querySelector(".left");
-    const rightBox = section.querySelector(".right");
+  sections.forEach((section) => {
+    gsap.to(section, {
+      scrollTrigger: {
+        trigger: section,          // Each section triggers its own animation
+        start: "top 100%",         // Trigger when the top of the section is in view
+        end: "top 50%",            // End when the top of the section reaches 50% of the viewport
+        scrub: 0.1,                // Smooth scroll animation
+        markers: true,            // Disable markers (you can set this to true for debugging)
+      },
+      borderRadius: "60px 60px 0 0", // Apply the border radius change
+    });
+  });
+}
 
-    if (leftBox && rightBox) {
-        console.log(`Setting up animation for section ${index}`); // Debugging
+changeBorderRadius();
 
-        // Initially move left & right boxes behind the center one
-        gsap.set(leftBox, { xPercent: 80,   });
-        gsap.set(rightBox, { xPercent: -80,  });
+function scalingImageEffect() {
+  const images = document.querySelectorAll('.scaling_image-img');
 
-        // Animate left box into place
-        gsap.to(leftBox, {
-            xPercent: 0,
-            
-            
-            
-            duration: 1.5,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: section,
-                start: "top 80%",
-                end: "top 50%",
-                scrub: true,
-                toggleActions: "play none none reset", // Reset when scrolling up
-                markers: false, // Remove debugging markers when done
-                id: `left-box-${index}`,
-                invalidateOnRefresh: true
-            }
-        });
+  if (!images.length) {
+    console.warn('No elements found with class .scaling_image-img');
+    return;
+  }
 
-        // Animate right box into place
-        gsap.to(rightBox, {
-            xPercent: 0,
-            
-            
-            
-            duration: 1.5,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: section,
-                start: "top 80%",
-                end: "top 50%",
-                scrub: true,
-                toggleActions: "play none none reset",
-                markers: false, // Remove debugging markers when done
-                id: `right-box-${index}`,
-                invalidateOnRefresh: true
-            }
-        });
-    } else {
-        console.warn(`Section ${index} is missing left or right box.`);
-    }
+  images.forEach((image) => {
+    gsap.fromTo(
+      image,
+      { scale: 1 },
+      {
+        scale: 1.5,
+        duration: 1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: image,
+          start: 'top 70%', 
+          end: 'bottom 30%',
+          scrub: 0.3,
+          markers: false,
+          invalidateOnRefresh: true,
+        }
+      }
+    );
+  });
+}
+
+function scalingImageEffectd() {
+  const elem = document.querySelectorAll('.enlarge__inView');
+
+  if (!elem.length) {
+    console.warn('No elements found with class .enlarge__inView');
+    return;
+  }
+
+  elem.forEach((elements) => {
+    gsap.fromTo(
+      elements,
+      { scale: 0.6 },
+      {
+        scale: 1,
+        duration: 1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: elements,
+          start: 'top 75%', 
+          end: 'bottom 30%',
+          scrub: false,
+          markers: false,
+        }
+      }
+    );
+  });
+}
+
+
+
+
+
+ 
+
+
+
+  scalingImageEffect();
+  scalingImageEffectd();
 });
 
 
 
+document.querySelectorAll(".moving_boxContainer").forEach((section, index) => {
+  const leftBox = section.querySelector(".left");
+  const rightBox = section.querySelector(".right");
+
+  if (leftBox && rightBox) {
+
+    // Initially move left & right boxes behind the center one
+    gsap.set(leftBox, { xPercent: 80 });
+    gsap.set(rightBox, { xPercent: -80 });
+
+    // Check screen width and apply animations only if width is greater than 768px
+    if (window.innerWidth > 768) {
+
+      // Animate left box into place
+      gsap.to(leftBox, {
+        xPercent: 0,
+        duration: 1.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          end: "top 50%",
+          scrub: true,
+          toggleActions: "play none none reset", // Reset when scrolling up
+          markers: false,
+          id: `left-box-${index}`,
+          invalidateOnRefresh: true
+        }
+      });
+
+      // Animate right box into place
+      gsap.to(rightBox, {
+        xPercent: 0,
+        duration: 1.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          end: "top 50%",
+          scrub: true,
+          toggleActions: "play none none reset",
+          markers: false, // Remove debugging markers when done
+          id: `right-box-${index}`,
+          invalidateOnRefresh: true
+        }
+      });
+
+    } else {
+      // If screen width is less than or equal to 768px, disable the ScrollTriggers
+      gsap.set(leftBox, { xPercent: 0 });  // Reset position of leftBox
+      gsap.set(rightBox, { xPercent: 0 }); // Reset position of rightBox
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Kill all ScrollTriggers for responsiveness
+    }
+
+  } else {
+    console.warn(`Section ${index} is missing left or right box.`);
+  }
+});
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+document.addEventListener("DOMContentLoaded", function () {
 
   function textAnimation() {
      
@@ -320,7 +365,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
-  // Ensure the DOM is ready before running the animation
   textAnimation();
 });
 
@@ -371,6 +415,7 @@ function velocitySlider() {
       function handleScroll(event) {
           let delta = event.deltaY || -event.wheelDelta;
           speed = baseSpeed + Math.min(Math.abs(delta), scrollSpeedFactor); 
+          ScrollTrigger.refresh();
       }
 
       window.addEventListener("wheel", handleScroll);
@@ -418,120 +463,81 @@ function videoAutoplayPause() {
 videoAutoplayPause();
 
 
-// change border radius on scrollh this will work for indivuila section
-
-function changeBorderRadius() {
-  const section = document.querySelectorAll(".radius-top"); // section where you want to change border radius
-
-  section.forEach((element) => {
-    gsap.to(element, {
-      scrollTrigger: {
-        trigger: element,
-        start: "10% 100%",
-        end: "10% 50%",
-        scrub: 0.1,
-        markers: false, 
-      },
-      borderRadius: "60px 60px 0 0",
-    });
-  }
-  );
-}
-
-changeBorderRadius();
 
 
-function scalingImageEffect() {
-  const images = document.querySelectorAll('.scaling_image-img ');
 
-  if (!images.length) {
-    console.warn('No elements found with class .scaling_image-img');
-    return;
-  }
 
-  images.forEach((image) => {
-    gsap.fromTo(
-      image,
-      { scale: 1 }, 
-      {
-        scale: 1.5,
-        duration: 1, 
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: image,
-          start: 'top bottom', 
-          end: 'bottom top',   
-          scrub: true,                 
-        }
-      }
-    );
-  });
-}
 
-scalingImageEffect();
 
-function scalingImageEffectd() {
-  const elem = document.querySelectorAll('.enlarge__inView ');
 
-  if (!elem.length) {
-    console.warn('No elements found with class .enlarge__inView');
-    return;
-  }
 
-  elem.forEach((elements) => {
-    gsap.fromTo(
-      elements,
-      { scale: 0.6, }, 
-      {
-        scale: 1,
-        duration: 1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: elements,
-          start: 'top bottom', 
-          end: 'bottom top',   
-          scrub: false,                 
-        }
-      }
-    );
-  });
-}
 
-scalingImageEffectd();
+
+
+
+
+
 
 
 
 
 function siteAnimationFn() {
-    if (window.innerWidth > 768) {
-  
-      gsap.utils.toArray(".board-slid").forEach((element) => {
-        gsap.fromTo(
-          element,
-          {
-            y: "25%",
-            opacity: 0,
+  if (window.innerWidth > 768) {
+
+    gsap.utils.toArray(".board-slid").forEach((block) => {
+      gsap.fromTo(
+        block,
+        {
+          y: "25%",
+          opacity: 0,
+        },
+        {
+          y: "0%",
+          opacity: 1,
+          stagger: 1,
+          ease: "linear",
+          duration: 0.3,
+          scrollTrigger: {
+            markers: false,  
+            trigger: block, // Trigger for each individual block
+            start: "top 65%",
+            end: "bottom 30%",
+            toggleActions: "play none none reverse",
           },
-          {
-            y: "0%",
-            opacity: 1,
-            stagger: 1,
-            ease: "linear",
-            duration: 0.3,
-            scrollTrigger: {
-              markers: false,  
-              trigger: element, // Trigger for each individual element
-              start: "top 65%",
-              end: "bottom 30%",
-              toggleActions: "play none none reverse",
-            },
-          }
-        );
-      });
-    }
+        }
+      );
+    });
   }
-  
+}
+
 siteAnimationFn();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 
 
@@ -577,7 +583,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   )
-})
+});
 
 
 
@@ -587,6 +593,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+ gsap.timeline({
+    scrollTrigger: {
+      trigger: ".video_scale_animation-main", 
+      start: "top top", 
+      end: "bottom bottom", 
+      scrub: 0.2, 
+      markers: false, 
+      onEnter: function () {
+        const video = document.getElementById('myVideo');
+        if (!video.hasAttribute('autoplay')) {
+          video.setAttribute('autoplay', 'true');
+        }
+        video.play(); 
+      }
+    }
+  });
+  
+  if (window.innerWidth > 768) {
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: ".video_scale_animation-main", 
+        start: "top top", 
+        end: "bottom top", 
+        scrub: 0.2, 
+        markers: false, 
+        pin: true, 
+        // pinspacing: false,
+      }
+    })
+    .from(".video_scale_animation .has_video_scale", {
+      scale: 0.7,
+      borderRadius: "20px",
+    })
+    .to(".video_scale_animation .has_video_scale", {
+      scale: 1, 
+      borderRadius: "0px",
+    });
+  }
 
 
 
@@ -613,7 +657,3 @@ var flkty = new Flickity('.carousel', {
   contain: true,
   initialIndex: 0
 });
-
-
-
-
